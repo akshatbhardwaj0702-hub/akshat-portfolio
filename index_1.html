@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akshat Bhardwaj | First-year B.Tech Student</title>
+<meta name="description" content="Portfolio of Akshat Bhardwaj, a first-year B.Tech student.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b1020;
+    --mist:#e8edf8;
+    --dim:#a9b4cc;
+    --aqua:#7fd8e8;
+    --lilac:#a99cf7;
+    --peach:#f5c6b0;
+    --glass:rgba(255,255,255,.06);
+    --edge:rgba(255,255,255,.16);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    min-height:100vh;
+    font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.65;color:var(--mist);
+    background:
+      radial-gradient(40rem 32rem at 12% 8%, rgba(169,156,247,.38), transparent 60%),
+      radial-gradient(36rem 30rem at 88% 22%, rgba(127,216,232,.30), transparent 60%),
+      radial-gradient(34rem 28rem at 30% 92%, rgba(245,198,176,.22), transparent 60%),
+      var(--ink);
+    background-attachment:fixed;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--aqua);outline-offset:3px;border-radius:8px}
+
+  /* Glass surface. The soft highlight follows the pointer (see script). */
+  .glass{
+    position:relative;overflow:hidden;
+    background:var(--glass);
+    border:1px solid var(--edge);
+    border-radius:24px;
+    -webkit-backdrop-filter:blur(20px) saturate(140%);
+    backdrop-filter:blur(20px) saturate(140%);
+  }
+  .glass::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(18rem circle at var(--mx,50%) var(--my,0%), rgba(255,255,255,.13), transparent 60%);
+    opacity:0;transition:opacity .3s;
+  }
+  .glass:hover::before{opacity:1}
+  .glass > *{position:relative}
+
+  .wrap{width:min(920px,100% - 2.5rem);margin-inline:auto}
+
+  /* Nav */
+  nav{position:sticky;top:.9rem;z-index:10;margin-top:.9rem}
+  nav .glass{border-radius:999px;display:flex;justify-content:space-between;align-items:center;padding:.55rem .6rem .55rem 1.3rem}
+  nav strong{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.05rem}
+  nav ul{display:flex;gap:.2rem;list-style:none}
+  nav a{display:block;padding:.45rem .9rem;border-radius:999px;text-decoration:none;color:var(--dim);font-size:.95rem;transition:background .2s,color .2s}
+  nav a:hover{background:rgba(255,255,255,.1);color:var(--mist)}
+
+  section{padding-top:4.5rem}
+  h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.3rem}
+
+  /* Hero */
+  .hero{padding:clamp(2.2rem,6vw,4.2rem);margin-top:3rem;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1{font-size:clamp(2.9rem,9.5vw,6rem);font-weight:700}
+  .hero .role{font-size:clamp(1.1rem,2.6vw,1.45rem);color:var(--aqua);margin-top:1rem}
+  .hero p.lead{max-width:34rem;color:var(--dim);margin-top:1.2rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .btn{
+    display:inline-block;padding:.75rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:500;
+    border:1px solid var(--edge);background:rgba(255,255,255,.08);transition:background .2s,transform .2s;
+  }
+  .btn:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+  .btn.main{background:var(--mist);color:var(--ink);border-color:var(--mist)}
+  .btn.main:hover{background:#fff}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+  /* Content blocks */
+  .panel{padding:clamp(1.5rem,4vw,2.4rem)}
+  .panel p{max-width:40rem;color:var(--dim)}
+  .panel p + p{margin-top:1rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.6rem}
+  .chip{padding:.45rem 1rem;border-radius:999px;border:1px solid var(--edge);background:rgba(255,255,255,.05)}
+
+  .projects{display:grid;gap:1rem}
+  .project{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:1.4rem 1.6rem}
+  .project h3{font-size:1.3rem;margin-bottom:.3rem}
+  .project p{color:var(--dim);font-size:.98rem;max-width:34rem}
+  .project a{color:var(--peach);text-decoration:none;white-space:nowrap}
+  .project a:hover{text-decoration:underline}
+  @media (max-width:560px){.project{grid-template-columns:1fr}}
+
+  .panel p a{color:var(--peach)}
+
+  footer{padding:4rem 0 2.5rem;color:var(--dim);font-size:.92rem}
+
+  @media (max-width:560px){nav ul{display:none}nav .glass{padding-right:1.3rem}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero{animation:none}
+    .btn,nav a,.glass::before{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="wrap" aria-label="Main">
+  <div class="glass">
+    <strong>Akshat Bhardwaj</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <header class="glass hero">
+    <h1>Akshat Bhardwaj</h1>
+    <p class="role">First-year B.Tech student</p>
+    <p class="lead">I’m just getting started in tech. This page shows what I’m learning and building, and it grows as I do.</p>
+    <div class="actions">
+      <a class="btn main" href="https://share.google/o5bEtgxlYtXNHBr4i" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/akshat-bhardwaj-1005a4427?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="glass panel">
+      <p>I’m a first-year B.Tech student who enjoys working out how software works and turning ideas into small projects.</p>
+      <p>Right now I’m building a strong base in programming and web development. I want to keep learning by making things I can share.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="glass panel">
+      <p style="margin-bottom:1.1rem">Things I’m learning and practising right now:</p>
+      <div class="chips">
+        <span class="chip">C programming</span>
+        <span class="chip">HTML and CSS</span>
+        <span class="chip">JavaScript basics</span>
+        <span class="chip">Git and GitHub</span>
+        <span class="chip">Problem solving</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="glass project">
+        <div>
+          <h3>This portfolio</h3>
+          <p>A responsive personal site with a frosted-glass look, built with HTML, CSS and a little JavaScript.</p>
+        </div>
+      </article>
+      <article class="glass project">
+        <div>
+          <h3>C practice programs</h3>
+          <p>Small programs I wrote while learning C, from simple calculations to loops and arrays.</p>
+        </div>
+        <a href="https://share.google/o5bEtgxlYtXNHBr4i" target="_blank" rel="noopener">Browse GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="glass panel">
+      <p>The quickest way to reach me is on LinkedIn. You can also see my code on GitHub.</p>
+      <p>Email: <a href="mailto:akshatbhardwaj0702@gmail.com">akshatbhardwaj0702@gmail.com</a></p>
+      <div class="actions">
+        <a class="btn main" href="https://www.linkedin.com/in/akshat-bhardwaj-1005a4427?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener">Message on LinkedIn</a>
+        <a class="btn" href="https://share.google/o5bEtgxlYtXNHBr4i" target="_blank" rel="noopener">See my GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>© <span id="year">2026</span> Akshat Bhardwaj</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Move the soft light on each glass surface with the pointer.
+  document.querySelectorAll(".glass").forEach(function (el) {
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      el.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+</script>
+
+<!-- ===== Chat assistant for this portfolio. Works on its own, no Botpress needed. Delete this whole block to remove it. ===== -->
+<style>
+  .bot-fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:20;width:3.8rem;height:3.8rem;border-radius:50%;border:1px solid var(--edge);background:rgba(255,255,255,.12);color:var(--mist);cursor:pointer;font:500 .95rem "DM Sans",system-ui,sans-serif;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);transition:background .2s}
+  .bot-fab:hover{background:rgba(255,255,255,.22)}
+  .bot-win{position:fixed;right:1.2rem;bottom:5.7rem;z-index:20;width:min(360px,100% - 2.4rem);height:min(480px,70vh);display:none;flex-direction:column}
+  .bot-win.open{display:flex}
+  .bot-head{padding:1rem 1.2rem;border-bottom:1px solid var(--edge);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700}
+  .bot-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem}
+  .bot-msg{max-width:88%;padding:.6rem .9rem;border-radius:16px;font-size:.95rem;line-height:1.5;background:rgba(255,255,255,.09)}
+  .bot-msg.me{align-self:flex-end;background:var(--mist);color:var(--ink)}
+  .bot-msg a{color:var(--peach)}
+  .bot-quick{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .7rem}
+  .bot-quick button{padding:.35rem .8rem;border-radius:999px;border:1px solid var(--edge);background:rgba(255,255,255,.06);color:var(--mist);font:inherit;font-size:.88rem;cursor:pointer}
+  .bot-quick button:hover{background:rgba(255,255,255,.16)}
+  .bot-form{display:flex;gap:.5rem;padding:.8rem;border-top:1px solid var(--edge)}
+  .bot-form input{flex:1;min-width:0;padding:.6rem .9rem;border-radius:999px;border:1px solid var(--edge);background:rgba(255,255,255,.06);color:var(--mist);font:inherit;font-size:.95rem}
+  .bot-form button{padding:.6rem 1.1rem;border-radius:999px;border:0;background:var(--mist);color:var(--ink);font:inherit;font-weight:500;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){.bot-fab{transition:none}}
+</style>
+
+<button class="bot-fab" id="botFab" aria-label="Open chat assistant" aria-expanded="false" aria-controls="botWin">Chat</button>
+<div class="glass bot-win" id="botWin" role="dialog" aria-label="Chat with Akshat’s portfolio assistant">
+  <div class="bot-head">Ask about Akshat</div>
+  <div class="bot-msgs" id="botMsgs" aria-live="polite"></div>
+  <div class="bot-quick" id="botQuick">
+    <button type="button" data-q="skills">Skills</button>
+    <button type="button" data-q="projects">Projects</button>
+    <button type="button" data-q="contact">Contact</button>
+  </div>
+  <form class="bot-form" id="botForm">
+    <input id="botInput" type="text" placeholder="Type a question" aria-label="Type your question" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+(function () {
+  var fab = document.getElementById("botFab");
+  var win = document.getElementById("botWin");
+  var msgs = document.getElementById("botMsgs");
+  var form = document.getElementById("botForm");
+  var input = document.getElementById("botInput");
+
+  // Edit these answers to change what the assistant says.
+  var answers = {
+    hello: "Hi! I can tell you about Akshat’s skills, projects, or how to contact him.",
+    about: "Akshat Bhardwaj is a first-year B.Tech student who is just getting started in tech and likes turning ideas into small projects.",
+    skills: "Akshat is learning and practising C programming, HTML and CSS, JavaScript basics, Git and GitHub, and problem solving.",
+    projects: "He has two projects so far: this portfolio site, and a set of C practice programs. You can see more on his GitHub.",
+    contact: 'You can email <a href="mailto:akshatbhardwaj0702@gmail.com">akshatbhardwaj0702@gmail.com</a>, message him on <a href="https://www.linkedin.com/in/akshat-bhardwaj-1005a4427" target="_blank" rel="noopener">LinkedIn</a>, or see his code on <a href="https://share.google/o5bEtgxlYtXNHBr4i" target="_blank" rel="noopener">GitHub</a>.',
+    fallback: "I only know what’s on this page: Akshat’s skills, projects and contact details. Try one of the buttons below."
+  };
+
+  function pick(text) {
+    var t = text.toLowerCase();
+    if (/contact|email|mail|reach|linkedin|github|hire|message/.test(t)) return "contact";
+    if (/project|built|build|portfolio|made/.test(t)) return "projects";
+    if (/skill|learn|language|tech|stack|html|css|javascript|c programming|git/.test(t)) return "skills";
+    if (/who|about|akshat|student|study|btech|b\.tech/.test(t)) return "about";
+    if (/^(hi|hello|hey|hii)\b/.test(t)) return "hello";
+    return "fallback";
+  }
+
+  function add(content, mine) {
+    var d = document.createElement("div");
+    d.className = "bot-msg" + (mine ? " me" : "");
+    if (mine) { d.textContent = content; } else { d.innerHTML = content; }  // only my own answers use HTML
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function ask(text, key) {
+    add(text, true);
+    setTimeout(function () { add(answers[key || pick(text)], false); }, 250);
+  }
+
+  function setOpen(open) {
+    win.classList.toggle("open", open);
+    fab.setAttribute("aria-expanded", String(open));
+    fab.setAttribute("aria-label", open ? "Close chat assistant" : "Open chat assistant");
+    if (open) { input.focus(); }
+  }
+
+  add(answers.hello, false);
+
+  fab.addEventListener("click", function () { setOpen(!win.classList.contains("open")); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && win.classList.contains("open")) { setOpen(false); fab.focus(); }
+  });
+  document.getElementById("botQuick").addEventListener("click", function (e) {
+    var q = e.target.getAttribute("data-q");
+    if (q) { ask(e.target.textContent, q); }
+  });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (v) { ask(v); input.value = ""; }
+  });
+})();
+</script>
+<!-- ===== End chat assistant ===== -->
+
+</body>
+</html>
