@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akshat Bhardwaj | Aspiring Software Developer, CSE Student</title>
+<meta name="description" content="Portfolio of Akshat Bhardwaj, a first-year B.Tech CSE student at JECRC University, Jaipur, learning programming and building projects.">
+<meta name="theme-color" content="#05070f">
+<meta property="og:title" content="Akshat Bhardwaj | Aspiring Software Developer">
+<meta property="og:description" content="First-year CSE student learning, experimenting and building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070f;--card:rgba(255,255,255,.045);--edge:rgba(255,255,255,.1);--txt:#e7ecf7;--dim:#9aa6bf;--blue:#4f8cff;--violet:#8b5cf6;--cyan:#22d3ee;--grad:linear-gradient(120deg,var(--blue),var(--violet) 55%,var(--cyan));color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 16px/1.7 Inter,system-ui,sans-serif;color:var(--txt);background:radial-gradient(40rem 30rem at 85% -5%,rgba(139,92,246,.22),transparent 60%),radial-gradient(34rem 28rem at 0% 30%,rgba(79,140,255,.16),transparent 60%),var(--bg);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(79,140,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(79,140,255,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);animation:drift 30s linear infinite}
+@keyframes drift{to{background-position:56px 56px}}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:5rem 0 .5rem;scroll-margin-top:4rem}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:.6rem}
+.sub{color:var(--dim);max-width:40rem;margin-bottom:2rem}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:20px;padding:1.4rem;transition:border-color .25s,transform .25s}
+.card:hover{border-color:rgba(79,140,255,.5);transform:translateY(-3px)}
+.glass{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tag{display:inline-block;padding:.15rem .65rem;border-radius:999px;border:1px solid var(--edge);font-size:.8rem;color:var(--dim)}
+.tag.st{border-color:rgba(34,211,238,.5);color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:999px;font:500 .95rem Inter,sans-serif;text-decoration:none;border:1px solid var(--edge);background:var(--card);color:var(--txt);cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+.btn.main{background:var(--grad);border-color:transparent;color:#05070f;font-weight:700}
+.btn[disabled],.btn.off{opacity:.45;cursor:not-allowed;transform:none}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* nav */
+header.nav{position:sticky;top:.8rem;z-index:30;margin-top:.8rem}
+.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .6rem .55rem 1.3rem;border-radius:999px;background:rgba(10,14,28,.65)}
+.logo{font:700 1.1rem "Space Grotesk",sans-serif;text-decoration:none}
+.nav ul{display:flex;gap:.1rem;list-style:none}
+.nav ul a{display:block;padding:.4rem .8rem;border-radius:999px;color:var(--dim);text-decoration:none;font-size:.93rem}
+.nav ul a:hover{color:var(--txt);background:rgba(255,255,255,.08)}
+.burger{display:none;background:none;border:1px solid var(--edge);color:var(--txt);border-radius:10px;padding:.4rem .7rem;cursor:pointer}
+@media(max-width:900px){.burger{display:block}.nav ul{display:none;position:absolute;top:110%;left:0;right:0;flex-direction:column;padding:.6rem;border-radius:20px;background:rgba(10,14,28,.95);border:1px solid var(--edge)}.nav ul.open{display:flex}.nav .btn.main{display:none}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding-top:4.5rem}
+.hello{color:var(--cyan);font:500 .9rem Inter,sans-serif;letter-spacing:.18em}
+.hero h1{font-size:clamp(3rem,8vw,5.4rem);margin:.5rem 0}
+.hero .role{font:500 clamp(1.05rem,2.4vw,1.35rem) "Space Grotesk",sans-serif;color:var(--txt)}
+.hero p.d{color:var(--dim);margin:1.1rem 0 1.8rem;max-width:34rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin-top:2rem}
+.facts .card{padding:.9rem 1rem;font-size:.9rem}
+.photo{position:relative;display:grid;place-items:center;min-height:380px}
+.ring{width:min(300px,70vw);aspect-ratio:1;border-radius:50%;padding:4px;background:var(--grad);animation:spin 14s linear infinite}
+.ring>div{width:100%;height:100%;border-radius:50%;background:#0a0e1c;display:grid;place-items:center;font:700 4.5rem "Space Grotesk",sans-serif;overflow:hidden;animation:spin 14s linear infinite reverse}
+.ring img{width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+.code{position:absolute;right:-.5rem;bottom:.5rem;padding:1rem 1.2rem;border-radius:16px;font:.78rem/1.6 ui-monospace,Menlo,Consolas,monospace;background:rgba(10,14,28,.8);animation:float 6s ease-in-out infinite}
+.code b{color:var(--violet);font-weight:400}.code i{color:var(--cyan);font-style:normal}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.photo{order:-1;min-height:320px}.code{right:0}}
+/* about / timeline */
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.two p{color:var(--dim);margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tl{border-left:2px solid var(--edge);padding-left:1.4rem;display:grid;gap:1.4rem}
+.tl div{position:relative}.tl div::before{content:"";position:absolute;left:-1.85rem;top:.5rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--grad)}
+.tl b{font-family:"Space Grotesk",sans-serif;color:var(--cyan)}.tl p{margin:.2rem 0 0}
+/* skills, projects, certs */
+.note{border:1px dashed rgba(139,92,246,.6);border-radius:14px;padding:.8rem 1rem;color:var(--dim);font-size:.92rem;margin-bottom:1.4rem}
+.card h3{font-size:1.15rem;margin-bottom:.8rem}
+.sk{display:flex;justify-content:space-between;gap:.6rem;padding:.4rem 0;border-bottom:1px solid var(--edge);font-size:.95rem}.sk:last-child{border:0}
+.pj .n{font:700 .9rem "Space Grotesk",sans-serif;color:var(--violet)}
+.pj p,.cert p{color:var(--dim);font-size:.94rem;margin:.5rem 0 .9rem}
+.row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}.acts{display:flex;gap:.6rem;flex-wrap:wrap}
+.acts .btn{padding:.45rem 1rem;font-size:.85rem}
+.cert dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;font-size:.85rem;color:var(--dim);margin-bottom:.9rem}.cert dd{color:var(--txt)}
+.cert img{width:100%;border-radius:10px;margin-bottom:.8rem}
+.add{border-style:dashed;text-align:left;color:var(--dim);font-size:.9rem}.add b{color:var(--txt);display:block;margin-bottom:.4rem}
+.edu{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start}
+.edu .big{font:700 2rem "Space Grotesk",sans-serif}
+@media(max-width:560px){.edu{grid-template-columns:1fr}}
+details{margin:0 0 1rem;font-size:.9rem;color:var(--dim)}
+summary{cursor:pointer;color:var(--cyan);margin-bottom:.3rem}
+details ul,.road ul{padding-left:1.1rem;margin:.4rem 0}
+details p{margin:.4rem 0 0!important}
+.road h3{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.road li{margin:.4rem 0;color:var(--dim);font-size:.94rem}
+/* contact */
+form{display:grid;gap:.9rem}
+label{font-size:.88rem;color:var(--dim);display:block;margin-bottom:.25rem}
+input,textarea{width:100%;padding:.7rem .9rem;border-radius:12px;border:1px solid var(--edge);background:rgba(255,255,255,.04);color:var(--txt);font:inherit}
+textarea{min-height:130px;resize:vertical}
+.err{color:#ff8c9d;font-size:.82rem;min-height:1.1em}
+#status{min-height:1.5em;font-size:.92rem}
+.soc{display:flex;gap:.7rem;margin-top:1.4rem;flex-wrap:wrap}
+.soc a.ci{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--edge);background:var(--card);transition:background .2s}
+.soc a.ci:hover{background:rgba(255,255,255,.12)}
+footer{margin-top:5rem;border-top:1px solid var(--edge);padding:2.4rem 0 3rem;text-align:center;color:var(--dim)}
+footer .soc{justify-content:center}
+#top{position:fixed;right:1.2rem;bottom:1.2rem;z-index:30;width:46px;height:46px;border-radius:50%;border:1px solid var(--edge);background:rgba(10,14,28,.8);color:var(--txt);cursor:pointer;display:none}
+#top.show{display:block}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body::before,.ring,.ring>div,.code{animation:none}.rv{opacity:1;transform:none;transition:none}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav wrap">
+  <div class="bar glass card" style="border-radius:999px;padding:.55rem .6rem .55rem 1.3rem">
+    <a class="logo" href="#home">Akshat <span class="grad">Bhardwaj</span></a>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#certs">Certifications</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn main" href="#contact">Let’s Connect</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="home" class="hero" style="scroll-margin-top:6rem">
+  <div>
+    <p class="hello">HELLO, I’M</p>
+    <h1 class="grad">Akshat Bhardwaj</h1>
+    <p class="role">Aspiring Software Developer | CSE Student | Tech Enthusiast</p>
+    <p class="d">I’m a first-year Computer Science and Engineering student at JECRC University, Jaipur, exploring the world of programming, software development, and emerging technologies. I’m passionate about learning new skills, solving problems, and turning ideas into meaningful digital experiences.</p>
+    <div class="cta"><a class="btn main" href="#projects">Explore My Work</a><a class="btn" href="#contact">Get In Touch</a></div>
+    <div class="facts">
+      <div class="card glass">First-Year B.Tech CSE Student</div>
+      <div class="card glass">Based in Jaipur, India</div>
+      <div class="card glass">Currently Learning and Building</div>
+    </div>
+  </div>
+  <div class="photo">
+    <div class="ring"><div id="photo">AB</div></div>
+    <div class="code card glass" aria-hidden="true"><b>const</b> akshat = {<br>&nbsp;&nbsp;role: <i>"CSE student"</i>,<br>&nbsp;&nbsp;learning: [<i>"C"</i>, <i>"Python"</i>, <i>"Web"</i>],<br>&nbsp;&nbsp;mode: <i>"building"</i><br>};</div>
+  </div>
+</section>
+
+<section id="about" class="rv">
+  <h2>A Little About Me</h2>
+  <div class="two">
+    <div>
+      <p>I’m at the start of my computer science journey, building a strong foundation in programming, computational thinking, problem-solving, and software development. I learn best by doing, so I try to turn what I study into small, practical projects.</p>
+      <p>I’m still early on, and I’m comfortable saying so. This portfolio shows where I am now and grows as I do.</p>
+      <div class="chips" id="interests"></div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:1rem">My Journey</h3>
+      <div class="tl">
+        <div><b>2026</b><p>Started my B.Tech CSE Core journey at JECRC University, Jaipur.</p></div>
+        <div><b>Present</b><p>Exploring programming, learning development tools, working on beginner-friendly projects, and building my professional portfolio.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="rv">
+  <h2>Technical Skills</h2>
+  <p class="note">This is a suggested learning roadmap, not verified expertise. Levels are Learning, Beginner or Exploring. Edit them in the CONFIG block to match what you have actually practised.</p>
+  <div class="grid" id="skillGrid"></div>
+</section>
+
+<section id="roadmap" class="rv">
+  <h2>Learning Roadmap</h2>
+  <p class="note">These are goals, not achievements. Update them in the CONFIG block as you really progress.</p>
+  <div class="grid" id="roadGrid"></div>
+</section>
+
+<section id="projects" class="rv">
+  <h2>Projects &amp; Experiments</h2>
+  <p class="sub">Starter projects. Each one is marked Planned or In Progress until there is finished work and a real link to show.</p>
+  <div class="grid" id="projGrid"></div>
+</section>
+
+<section id="certs" class="rv">
+  <h2>Certifications &amp; Learning</h2>
+  <p class="sub">Suggested certifications to pursue. None of these are completed yet, and nothing here is a real credential.</p>
+  <div class="grid" id="certGrid"></div>
+</section>
+
+<section id="education" class="rv">
+  <h2>Education</h2>
+  <div class="card edu">
+    <div class="big grad">2026</div>
+    <div>
+      <h3>Bachelor of Technology (B.Tech)</h3>
+      <p style="color:var(--dim);margin:.3rem 0 .8rem">Computer Science and Engineering, Core<br>JECRC University, Jaipur, Rajasthan, India</p>
+      <span class="tag st">First Year, Currently Pursuing</span>
+    </div>
+  </div>
+</section>
+
+<section id="beyond" class="rv">
+  <h2>Beyond the Code</h2>
+  <p class="sub">Personal interests, not achievements. Edit them in the CONFIG block.</p>
+  <div class="grid" id="beyondGrid"></div>
+</section>
+
+<section id="contact" class="rv">
+  <h2>Let’s Build Something <span class="grad">Together</span></h2>
+  <div class="two">
+    <div>
+      <p>I’m always interested in connecting with fellow students, developers, and technology enthusiasts. If you’d like to discuss a project, share an idea, or connect professionally, feel free to reach out.</p>
+      <div class="cta" id="contactBtns"></div>
+      <div class="soc" id="soc"></div>
+    </div>
+    <form id="form" class="card" novalidate>
+      <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"><div class="err" id="e-name"></div></div>
+      <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><div class="err" id="e-email"></div></div>
+      <div><label for="f-subject">Subject</label><input id="f-subject" name="subject"><div class="err" id="e-subject"></div></div>
+      <div><label for="f-message">Message</label><textarea id="f-message" name="message"></textarea><div class="err" id="e-message"></div></div>
+      <button class="btn main" id="send" type="submit">Send message</button>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p style="color:var(--txt);font-weight:500">Designed &amp; Built by Akshat Bhardwaj</p>
+  <p>Learning today. Building tomorrow.</p>
+  <div class="soc" id="soc2"></div>
+  <p style="margin-top:1.2rem;font-size:.88rem">© <span id="year">2026</span> Akshat Bhardwaj</p>
+</footer>
+<button id="top" aria-label="Back to top">Top</button>
+
+<script>
+/* ============ EDIT YOUR CONTENT HERE ============ */
+const CONFIG = {
+  email: "akshatbhardwaj0702@gmail.com",
+  github: "https://share.google/o5bEtgxlYtXNHBr4i",
+  linkedin: "https://www.linkedin.com/in/akshat-bhardwaj-1005a4427?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  instagram: "",            // optional: paste your Instagram link to show it
+  photo: "",                // optional: path to your photo, e.g. "me.jpg"
+  formEndpoint: "",         // paste a Formspree-style URL so the form can truly send
+  interests: ["Programming and software engineering","AI and emerging technologies","Web development and UI/UX","Creative problem-solving","Learning by building"],
+  skills: [
+    ["Programming", [["C Programming","Learning"],["Python","Exploring"],["Java","Exploring"]]],
+    ["Web Development", [["HTML5","Beginner"],["CSS3","Beginner"],["JavaScript","Learning"],["Responsive Web Design","Learning"]]],
+    ["Tools and Platforms", [["Git and GitHub","Learning"],["Visual Studio Code","Beginner"],["Figma","Exploring"],["Canva","Beginner"]]],
+    ["Emerging Technologies", [["Artificial Intelligence","Exploring"],["Generative AI Tools","Exploring"],["Prompt Engineering","Exploring"],["Data Structures and Algorithms","Learning"]]]
+  ],
+  projects: [   // add demo / code links only when they are real
+    {title:"Personal Portfolio Website",desc:"A responsive website showcasing my profile, technical interests, learning progress, and projects.",stack:["HTML","CSS","JavaScript"],status:"In Progress",demo:"",code:"",
+      features:["Responsive dark layout that works on phone and desktop","All content editable from one config block","Project gallery, certificate section and contact form"],learn:"page structure, responsive design, and how to publish a website."},
+    {title:"Student Productivity Dashboard",desc:"A simple dashboard to organize assignments, deadlines, study sessions, and daily goals.",stack:["HTML","CSS","JavaScript"],status:"Planned",demo:"",code:"",
+      features:["Add assignments and tick them off","Deadline list sorted by date","Daily goals and a simple study timer"],learn:"working with the DOM, saving data in the browser, and planning a small app."},
+    {title:"AI Prompt Library",desc:"A categorized collection of useful AI prompts for studying, productivity, brainstorming, and coding.",stack:["HTML","CSS","JavaScript"],status:"Planned",demo:"",code:"",
+      features:["Categories for study, productivity, brainstorming and coding","Search and one-click copy","Space to add my own prompts"],learn:"filtering data with JavaScript and writing clear, useful prompts."},
+    {title:"Python Utility Toolkit",desc:"Small Python programs for everyday calculations, automation experiments, and problem-solving practice.",stack:["Python"],status:"Planned",demo:"",code:"",
+      features:["Unit and temperature converters","A simple calculator and a number-guessing game","Small file-renaming experiments"],learn:"Python basics, functions, loops, and file handling."}
+  ],
+  certs: [      // issuer, date, id, url and image stay empty until you earn a real credential
+    ["Introduction to Artificial Intelligence","Elements of AI (University of Helsinki)"],
+    ["Python Programming Fundamentals","Python for Everybody (Coursera) or freeCodeCamp"],
+    ["HTML and CSS Fundamentals","freeCodeCamp Responsive Web Design"],
+    ["Git and GitHub Essentials","GitHub Skills: Introduction to GitHub"],
+    ["Generative AI and Prompt Engineering","DeepLearning.AI short courses or Google Cloud Skills Boost"],
+    ["Introduction to Data Structures and Algorithms","NPTEL or a Coursera DSA course"]
+  ].map(([n,sg])=>({name:n,suggest:sg,issuer:"",date:"",id:"",url:"",image:"",status:"Recommended Learning"})),
+  roadmap: [
+    ["Now","First semester",["Build solid C programming basics","Practise HTML, CSS and JavaScript on small pages","Use Git and GitHub for every project","Finish and publish this portfolio"]],
+    ["Next","Following semesters",["Learn Python and build the utility toolkit","Work through data structures and algorithms basics","Build the productivity dashboard and prompt library","Complete one or two beginner certifications"]],
+    ["Later","Long-term goals",["Build a larger project with a backend","Try open-source contributions on GitHub","Prepare a resume and portfolio for internships","Keep exploring AI and emerging technologies"]]
+  ],
+  beyond: ["Exploring creative design and digital visuals","Discovering new technologies and AI tools","Experimenting with new ideas","Gaming and technology culture","Learning through hands-on projects"]
+};
+/* ================================================= */
+
+const $ = s => document.querySelector(s);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const P = {
+  mail:'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+  gh:'<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>',
+  li:'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>',
+  ig:'<rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/>'
+};
+const ico = k => '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">'+P[k]+'</svg>';
+const C = CONFIG;
+
+/* Skills */
+$("#skillGrid").innerHTML = C.skills.map(([g,items]) =>
+  '<div class="card"><h3>'+esc(g)+'</h3>'+items.map(([n,l])=>'<div class="sk"><span>'+esc(n)+'</span><span class="tag">'+esc(l)+'</span></div>').join("")+'</div>').join("");
+
+/* Roadmap */
+$("#roadGrid").innerHTML = C.roadmap.map(([a,b,l]) =>
+  '<div class="card road"><h3>'+esc(a)+' <span class="tag">'+esc(b)+'</span></h3><ul>'+l.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>').join("");
+
+/* Projects */
+const link = (u,t) => u ? '<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+t+'</a>' : '<button class="btn" disabled title="Add a real link in CONFIG">'+t+'</button>';
+$("#projGrid").innerHTML = C.projects.map((p,i)=>
+  '<article class="card pj"><span class="n">Project 0'+(i+1)+'</span> <span class="tag st">'+esc(p.status)+'</span><h3 style="margin-top:.5rem">'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p><details><summary>Planned features and goals</summary><ul>'+p.features.map(f=>'<li>'+esc(f)+'</li>').join("")+'</ul><p>What I want to learn: '+esc(p.learn)+'</p></details><div class="row">'+p.stack.map(x=>'<span class="tag">'+esc(x)+'</span>').join("")+'</div><div class="acts">'+link(p.demo,"View Project")+link(p.code,"Source Code")+'</div></article>').join("");
+
+/* Certificates */
+$("#certGrid").innerHTML = C.certs.map(c=>
+  '<article class="card cert">'+(c.image?'<img src="'+esc(c.image)+'" alt="Certificate: '+esc(c.name)+'">':'')+'<span class="tag st">'+esc(c.status)+'</span><h3 style="margin-top:.6rem">'+esc(c.name)+'</h3><p></p><dl><dt>Suggested</dt><dd>'+esc(c.suggest||"Add a provider")+'</dd><dt>Issuer</dt><dd>'+esc(c.issuer||"Not earned yet")+'</dd><dt>Date</dt><dd>'+esc(c.date||"Not completed")+'</dd><dt>ID</dt><dd>'+esc(c.id||"Not added yet")+'</dd></dl>'+link(c.url,"Verify")+'</article>').join("")
+  + '<div class="card add"><b>Add Certificate</b>Copy one entry in CONFIG.certs, then add the real issuer, completion date, credential ID, verification link and an image path. Leave a field empty until you have the genuine detail.</div>';
+
+/* Interests and beyond */
+$("#interests").innerHTML = C.interests.map(i=>'<span class="tag">'+esc(i)+'</span>').join("");
+$("#beyondGrid").innerHTML = C.beyond.map(b=>'<div class="card">'+esc(b)+'</div>').join("");
+
+/* Photo */
+if (C.photo) $("#photo").innerHTML = '<img src="'+esc(C.photo)+'" alt="Akshat Bhardwaj">';
+
+/* Contact links */
+$("#contactBtns").innerHTML = '<a class="btn main" href="mailto:'+esc(C.email)+'">'+ico("mail")+'Email me</a>';
+const socials = [["mail","mailto:"+C.email,"Email"],["li",C.linkedin,"LinkedIn"],["gh",C.github,"GitHub"],["ig",C.instagram,"Instagram"]].filter(s=>s[1]&&s[1]!=="mailto:");
+const socHtml = socials.map(s=>'<a class="ci" href="'+esc(s[1])+'" aria-label="'+s[2]+'"'+(s[0]==="mail"?'':' target="_blank" rel="noopener"')+'>'+ico(s[0])+'</a>').join("");
+$("#soc").innerHTML = socHtml; $("#soc2").innerHTML = socHtml;
+
+/* Nav, year, back to top */
+$("#year").textContent = new Date().getFullYear();
+const menu = $("#menu"), burger = $("#burger");
+burger.onclick = () => { const o = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", o); };
+menu.onclick = e => { if (e.target.tagName === "A") { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); } };
+const toTop = $("#top");
+addEventListener("scroll", () => toTop.classList.toggle("show", scrollY > 600), {passive:true});
+toTop.onclick = () => scrollTo({top:0});
+
+/* Contact form: validates, and only claims success after a real send */
+const form = $("#form"), statusEl = $("#status");
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const v = Object.fromEntries(new FormData(form));
+  const errs = {
+    name: v.name.trim() ? "" : "Please enter your name.",
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim()) ? "" : "Please enter a valid email address.",
+    subject: v.subject.trim() ? "" : "Please add a subject.",
+    message: v.message.trim().length >= 10 ? "" : "Please write at least 10 characters."
+  };
+  Object.keys(errs).forEach(k => { $("#e-"+k).textContent = errs[k]; });
+  const bad = Object.keys(errs).find(k => errs[k]);
+  if (bad) { $("#f-"+bad).focus(); statusEl.textContent = ""; return; }
+  if (!C.formEndpoint) {
+    location.href = "mailto:"+C.email+"?subject="+encodeURIComponent(v.subject)+"&body="+encodeURIComponent(v.message+"\n\n"+v.name+" ("+v.email+")");
+    statusEl.style.color = "var(--dim)";
+    statusEl.textContent = "Your email app should open with the message ready. It has not been sent yet.";
+    return;
+  }
+  const btn = $("#send"); btn.disabled = true; btn.textContent = "Sending…"; statusEl.textContent = "";
+  try {
+    const r = await fetch(C.formEndpoint, {method:"POST", headers:{Accept:"application/json"}, body:new FormData(form)});
+    if (!r.ok) throw new Error("bad response");
+    form.reset(); statusEl.style.color = "var(--cyan)"; statusEl.textContent = "Message sent. Thank you!";
+  } catch (_) {
+    statusEl.style.color = "#ff8c9d"; statusEl.textContent = "Sorry, that didn’t send. Please email me directly instead.";
+  } finally { btn.disabled = false; btn.textContent = "Send message"; }
+});
+
+/* Entrance animations */
+const rv = document.querySelectorAll(".rv");
+if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), {threshold:.08});
+  rv.forEach(el => io.observe(el));
+} else { rv.forEach(el => el.classList.add("in")); }
+</script>
+</body>
+</html>
